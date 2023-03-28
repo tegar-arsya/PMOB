@@ -1,0 +1,47 @@
+<html>
+<head>
+
+    <title>Google Maps Multiple Markers</title>
+    <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+</head>
+<body>
+<div id="map" style="height: 100%; width: 100%;">
+</div>
+<script type="text/javascript">
+    var locations = [
+      ['RSKIA PKU Muhammadiyah', -7.82207208993476, 110.40096251777855],
+      ['RSKIA Permata Bunda', -7.819627436398321, 110.39970125640075],
+      ['RSUD Kota Yogyakarta', -7.825487584403438, 110.37783489502367],
+	  ['RS Pratama Kota Yogyakarta', -7.814877525424626, 110.3738628410558],
+	  ['RS PKU Muhammadiyah', -7.800338464729965, 110.36303027217961],
+	  ['RSI Hidayatullah', -7.8144790745463215, 110.38775515640016],
+	  ['Rumah Sakit Umum Veteran Patmasuri', -7.829463811413566, 110.35991377174606],
+	  ['Rumah Sakit Bethesda Yogyakarta', -7.783479671018837, 110.37760482570808],
+	  ['Rumah Sakit Mata Dr. Yap Yogyakarta', -7.779937304730552, 110.37469934898576]];
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 11,
+      center: new google.maps.LatLng(-7.795819970218719, 110.37095949318875),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) {
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
+      });
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+  </script>
+</body>
+</html>

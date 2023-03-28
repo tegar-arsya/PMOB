@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:orientation="vertical"
+    android:background="@drawable/background"
+    android:gravity="center"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="APLIKASI PENCARIAN RUMAH SAKIT DI KOTA YOGYAKARTA"
+        android:typeface="serif"
+        android:gravity="center"
+        android:textSize="22sp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:paddingBottom="50dp"/>
+    <Button
+        android:id="@+id/tombolUtama"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:drawableTop="@drawable/dekat"
+        android:padding="8dp"
+        android:text="SENTUH DISINI UNTUK PENCARIAN RUMAH SAKIT TERDEKAT"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:theme="@style/tombolUtama"
+        android:typeface="sans" />
+    <Button
+        android:id="@+id/tombol1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:drawableTop="@drawable/gbrlist"
+        android:padding="8dp"
+        android:text="DAFTAR SEMUA RUMAH SAKIT DI KOTA YOGYAKARTA"
+        android:typeface="sans"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:theme="@style/tombolUtama"/>
+</LinearLayout>
